@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conhecendo - NOTEE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        @font-face {
+            font-family: 'More Sugar';
+            src: url('caminho/para/sua/fonte/MoreSugar-Regular.woff2') format('woff2'),
+                 url('caminho/para/sua/fonte/MoreSugar-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Codec Pro';
+            src: url('CodecPro-Regular.woff2') format('woff2'),
+                 url('CodecPro-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body {
+            background: url("imagens/fundoLogin.png");
+            background-size: cover;
+        }
+
+        .Seção {
+            margin: 60px;
+            height: 81vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Dados {
+            position: relative;
+            width: 100%;
+            padding: 180px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url("imagens/conhecendo.png") no-repeat center;
+            background-size: 1000px auto;
+        }
+
+        .topo-conhecendo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-bottom: 30px;
+        }
+
+        .imagem-voltar {
+            position: absolute;
+            left: 300px;
+        }
+
+        .titulo-principal {
+            font-family: 'More Sugar', cursive;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .secao-preferencias {
+            margin-bottom: 40px;
+        }
+
+        .titulo-secao {
+            font-family: 'Anton', sans-serif;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #000;
+            text-align: left;
+            margin-left: 70px;
+        }
+
+        .botoes-genero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-genero {
+            background-color: #0071a0;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-family: 'Codec Pro', sans-serif;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn-genero:hover {
+            background-color: #005a85;
+            opacity: 0.9;
+        }
+
+        .btn-genero.selecionado {
+            background-color: #7cc623;
+            color: white;
+        }
+
+        .artistas-e-pesquisa {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .artistas-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        .artista {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .artista:hover {
+            transform: scale(1.05);
+        }
+
+        .artista-imagem {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0071a0;
+            margin-bottom: 8px;
+        }
+
+        .artista-nome {
+            font-family: 'Anton', sans-serif;
+            font-size: 12px;
+            color: #000;
+        }
+
+        .btn-pesquisar {
+            background-color: #7cc623;
+            color: #424242;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-family: 'Codec Pro', sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn-pesquisar:hover {
+            background-color: #6ab01f;
+            opacity: 0.9;
+        }
+
+        .btn-continuar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-family: 'Codec Pro', sans-serif;
+            background-color: #4d840a;
+            width: 250px;
+            height: 35px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin: 20px auto 0;
+            text-decoration: none;
+        }
+
+        .btn-continuar:hover {
+            opacity: 0.8;
+        }
+
+        @media(max-width: 768px) {
+            .Seção {
+                margin: 20px;
+                height: auto;
+            }
+
+            .Dados {
+                padding: 20px;
+                background-size: 325px auto;
+                margin-top: 100px;
+                background-image: url("imagens/conhecendo.png");
+                gap: 0px;
+            }
+
+            .titulo-principal {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+
+            .titulo-secao {
+                font-size: 10px;
+                margin-bottom: 10px;
+            }
+
+            .botoes-genero {
+                gap: 5px;
+            }
+
+            .btn-genero {
+                padding: 5px 10px;
+                font-size: 8px;
+            }
+
+            .artista-imagem {
+                width: 50px;
+                height: 50px;
+            }
+
+            .artista-nome {
+                font-size: 9px;
+            }
+
+            .btn-pesquisar {
+                padding: 8px 15px;
+                font-size: 10px;
+            }
+
+            .btn-continuar {
+                width: 150px;
+                height: 25px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="Seção">
+        <div class="Dados">
+            <div class="topo-conhecendo">
+                <a href="cadastro.html" class="imagem-voltar"><img src="imagens/retorno.png" alt="Voltar"></a>
+                <p class="titulo-principal">Agora queremos saber mais sobre você!</p>
+            </div>
+
+            <!-- Seção de Gosto Musical -->
+            <div class="secao-preferencias">
+                <p class="titulo-secao">Gosto Musical Preferido (Mínimo 3):</p>
+                <div class="botoes-genero">
+                    <button class="btn-genero" onclick="selecionarGenero(this)">POP</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">ROCK</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">SERTANEJO</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">METAL</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">POP NACIONAL</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">FORRÓ</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">ELETRÔNICA</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">JAZZ</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">CLÁSSICA</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">FUNK</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">MPB</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">ALTERNATIVO</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">HIP-HOP</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">K-POP</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">REGGAE</button>
+                    <button class="btn-genero" onclick="selecionarGenero(this)">SOUL</button>
+                </div>
+            </div>
+
+            <!-- Seção de Artistas -->
+            <div class="secao-preferencias">
+                <p class="titulo-secao">Selecione Seu Artista Favorito-(Mínimo 2)</p>
+                <div class="artistas-e-pesquisa">
+                    <div class="artistas-container">
+                        <div class="artista" onclick="selecionarArtista(this)">
+                            <img src="imagens/billie.jpeg" alt="Billie Eilish" class="artista-imagem">
+                            <p class="artista-nome">Billie Eilish</p>
+                        </div>
+                        <div class="artista" onclick="selecionarArtista(this)">
+                            <img src="imagens/radiohead_capa.jpg.jpeg" alt="Radiohead" class="artista-imagem">
+                            <p class="artista-nome">Radiohead</p>
+                        </div>
+                        <div class="artista" onclick="selecionarArtista(this)">
+                            <img src="imagens/Caetano-velso.PNG" alt="Caetano Veloso" class="artista-imagem">
+                            <p class="artista-nome">Caetano Veloso</p>
+                        </div>
+                        <div class="artista" onclick="selecionarArtista(this)">
+                            <img src="imagens/Tom_Jobim.jpg.jpeg" alt="Tom Jobim" class="artista-imagem">
+                            <p class="artista-nome">Tom Jobim</p>
+                        </div>
+                        <div class="artista" onclick="selecionarArtista(this)">
+                            <img src="imagens/Liniker.jpg.jpeg" alt="Liniker" class="artista-imagem">
+                            <p class="artista-nome">Liniker</p>
+                        </div>
+                    </div>
+                    <button class="btn-pesquisar" onclick="pesquisarArtista()">🔍 Pesquisar Artista</button>
+                </div>
+            </div>
+
+            <a href="tela_albuns.html" class="btn-continuar">Ir para NOTEE</a>
+        </div>
+    </section>
+
+    <script>
+        let generoselecionados = [];
+        let artistasSelecionados = [];
+
+        function selecionarGenero(elemento) {
+            elemento.classList.toggle('selecionado');
+            if (elemento.classList.contains('selecionado')) {
+                generoselecionados.push(elemento.textContent);
+            } else {
+                generoselecionados = generoselecionados.filter(g => g !== elemento.textContent);
+            }
+            console.log('Gêneros selecionados:', generoselecionados);
+        }
+
+        function selecionarArtista(elemento) {
+            elemento.style.opacity = elemento.style.opacity === '0.5' ? '1' : '0.5';
+            const nome = elemento.querySelector('.artista-nome').textContent;
+            if (elemento.style.opacity === '0.5') {
+                artistasSelecionados.push(nome);
+            } else {
+                artistasSelecionados = artistasSelecionados.filter(a => a !== nome);
+            }
+            console.log('Artistas selecionados:', artistasSelecionados);
+        }
+
+        function pesquisarArtista() {
+            const termo = prompt('Digite o nome do artista que deseja pesquisar:');
+            if (termo) {
+                console.log('Pesquisando artista:', termo);
+                alert('Artista pesquisado: ' + termo);
+            }
+        }
+    </script>
+</body>
+</html>

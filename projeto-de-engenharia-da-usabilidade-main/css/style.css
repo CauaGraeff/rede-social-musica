@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Black', Gadget, sans-serif; /* Fonte robusta aproximada da imagem */
+}
+
+body {
+    background-color: #0476a6; /* Azul de fundo predominante */
+    color: #ffffff;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* BARRA LATERAL */
+.sidebar {
+    width: 60px;
+    background-color: #0476a6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.top-icons, .bottom-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sidebar-icon {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.sidebar-icon:hover {
+    opacity: 1;
+}
+
+/* CONTAINER PRINCIPAL */
+.main-container {
+    margin-left: 60px;
+    flex: 1;
+    padding: 20px 40px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 6px 10px;
+    border-radius: 30px;
+    display: flex;
+    gap: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background-color: #ffffff;
+    color: #0286bc;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.user-profile-btn {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* SEÇÃO DE PERFIL */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 90px; /* Altura ideal baseada na proporção da imagem original */
+    width: auto;  /* Mantém a largura proporcional para não distorcer a logo */
+    display: block;
+    object-fit: contain; /* Garante que a imagem fique nítida dentro do espaço */
+}
+
+
+.profile-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.profile-avatar {
+    width: 180px;
+    height: 180px;
+    background-color: #757575;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.profile-avatar i {
+    font-size: 130px;
+    color: #ffffff;
+    margin-bottom: -10px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-title h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.edit-btn {
+    background-color: #1a1a1a;
+    border: none;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.rating-count {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+.share-btn {
+    background-color: #1a1a1a;
+    border: none;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.bio-box {
+    background-color: #035a80;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 110px;
+}
+
+.bio-box p {
+    color: #a0d2eb;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* Força os ícones da barra lateral a continuarem brancos mesmo após clicados */
+.sidebar-icon {
+    color: #ffffff;
+}
+
+/* CONTAINER CENTRAL */
+.settings-container {
+    max-width: 600px;
+    margin: 60px auto 0 auto; /* Centraliza horizontalmente na tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TÍTULO PRINCIPAL */
+.settings-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* BARRA DE PESQUISA */
+.search-box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #262626; /* Fundo escuro do input */
+    border: none;
+    border-radius: 30px;
+    padding: 18px 25px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.search-icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 18px;
+    pointer-events: none; /* Evita que o ícone atrapalhe o clique no input */
+}
+
+/* PAINEL DE OPÇÕES (CARD AZUL ESCURO) */
+.options-panel {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* CADA LINHA DE OPÇÃO */
+.option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.2s ease;
+}
+
+.option-text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.option-icon {
+    font-size: 22px;
+}
+
+/* ESTADO SELECIONADO (Segurança e privacidade na imagem) */
+.option-item.active {
+    background-color: #ffffff; /* Mesmo padrão branco do item ativo do menu */
+    color: #0286bc;
+}
+
+.option-item.active .option-text,
+.option-item.active .option-icon {
+    color: #0286bc;
+}
+
+/* Efeito ao passar o mouse nas outras opções */
+.option-item:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+/* ===========================
+   FÃ CLUBE - CONTEÚDO
+   =========================== */
+
+.fanclub-wrapper {
+    width: 100%;
+}
+
+/* CARD DE CABEÇALHO DO CLUBE */
+.fanclub-header {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* AVATAR REDONDO (o "CD") */
+.fanclub-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #757575;
+}
+
+.fanclub-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* INFO CENTRAL: nome + botão entrar + criado por */
+.fanclub-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fanclub-name-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.fanclub-name-row h1 {
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.entrar-btn {
+    background-color: #ffffff;
+    color: #0286bc;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.entrar-btn:hover {
+    opacity: 0.85;
+}
+
+.fanclub-creator {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0.95;
+}
+
+/* CONTADORES (Integrantes / Comentários) */
+.fanclub-stats {
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+    text-align: center;
+}
+
+.fanclub-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fanclub-stat .stat-number {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.fanclub-stat .stat-label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* PAINEL DE CONTEÚDO (área grande com os blocos) */
+.fanclub-content-panel {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* COLUNA ESQUERDA: dois blocos menores empilhados */
+.fanclub-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* COLUNA DIREITA: dois blocos maiores empilhados */
+.fanclub-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.fanclub-block {
+    background-color: #2f7891; /* tom azul-acinzentado, mais claro que o painel */
+    border-radius: 18px;
+    min-height: 90px;
+}
+
+.fanclub-col-left .fanclub-block {
+    min-height: 90px;
+}
+
+.fanclub-col-right .fanclub-block {
+    min-height: 130px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 700px) {
+    .fanclub-header {
+        flex-wrap: wrap;
+    }
+
+    .fanclub-stats {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 35px;
+    }
+
+    .fanclub-content-panel {
+        grid-template-columns: 1fr;
+    }
+}

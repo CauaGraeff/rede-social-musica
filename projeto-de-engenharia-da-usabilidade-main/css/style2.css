@@ -1,0 +1,516 @@
+* {     
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+
+body { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.6) 100%),                       
+    url('imagens/Wireframe_Notee_LaSalle_2026 (1).png');         
+    background-size: cover;  
+    background-position: center;   
+    background-repeat: no-repeat;      
+    background-attachment: fixed; 
+    background-color: #0071A0;      
+    color: #FFFFFF;     
+    font-family: 'Open Sans', sans-serif;      
+    padding-top: 110px;         
+    padding-left: 90px;
+    min-height: 100vh;      
+    overflow-x: hidden;  
+}
+
+/* BARRA LATERAL */
+.sidebar {
+    width: 70px;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 110px 0 30px 0;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 90;
+}
+
+.sidebar .top-icons,
+.sidebar .bottom-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sidebar .sidebar-icon {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: all 0.2s ease;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .sidebar-icon:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .sidebar-icon.ativo {
+    background-color: #FFFFFF;
+    color: #0286bc;
+    opacity: 1;
+}
+
+.cabecalho-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    background-color: transparent;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: auto;
+    overflow: hidden;
+}
+
+.cabecalho-esquerdo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icone-home {
+    font-size: 2.2rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5)); 
+}
+
+.imagem-logo{
+    height: 90px;                  
+    width: auto; 
+    object-fit: contain;             
+    flex-shrink: 0;              
+}
+
+.navegacao-cabecalho {     
+    display: flex;     
+    align-items: center;     
+    background-color: rgba(0, 0, 0, 0.25); 
+    padding: 6px 10px;     
+    border-radius: 30px;            
+    gap: 4px;             
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),                 
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);                    
+    backdrop-filter: blur(8px);     
+    -webkit-backdrop-filter: blur(8px); 
+} 
+
+.item-navegacao {     
+    color: #FFFFFF;
+    text-decoration: none;      
+    font-size: 0.95rem;     
+    padding: 8px 16px;           
+    border-radius: 20px;        
+    transition: all 0.2s ease;        
+    font-family: 'Open Sans', sans-serif;     
+    font-weight: 700;     
+} 
+
+.item-navegacao:hover {     
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.item-navegacao.ativo {     
+    background-color: #FFFFFF;       
+    color: #0286bc;                
+} 
+
+.cabecalho-direito {     
+    display: flex;     
+    align-items: center;    
+    gap: 20px;                      
+} 
+
+.icone-acessibilidade, .icone-busca {     
+    font-size: 1.6rem;     
+    color: #FFFFFF;     
+    cursor: pointer;     
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5)); 
+}
+
+.icone-usuario {     
+    font-size: 1.8rem;                 
+    color: #FFFFFF;    
+    cursor: pointer;     
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5)); 
+} 
+
+
+.container-conteudo { 
+    width: 100%; 
+    padding: 15px 40px 30px 40px;    
+    display: flex; 
+    flex-direction: column;   
+    gap: 45px;                   
+    overflow: hidden; 
+} 
+
+/* ===========================
+   PÁGINA DE ARTISTA
+   =========================== */
+
+.artist-wrapper {
+    width: 100%;
+    padding: 15px 40px 30px 40px;
+}
+
+.artist-header {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.artist-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.artist-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.artist-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.artist-info h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.seguir-btn {
+    background-color: #FFFFFF;
+    color: #0286bc;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.seguir-btn:hover {
+    opacity: 0.85;
+}
+
+.artist-stats {
+    display: flex;
+    gap: 45px;
+    margin-left: auto;
+    text-align: center;
+}
+
+.artist-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-stat .stat-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+}
+
+.artist-stat .stat-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+.albums-panel {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.albums-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.albums-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 140px;
+}
+
+.album-cover {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.album-name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* ===========================
+   FÃ CLUBE
+   =========================== */
+
+.fanclub-wrapper {
+    width: 100%;
+    padding: 15px 40px 30px 40px;
+}
+
+.fanclub-header {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.fanclub-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.fanclub-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fanclub-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fanclub-name-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.fanclub-name-row h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.entrar-btn {
+    background-color: #FFFFFF;
+    color: #0286bc;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.entrar-btn:hover {
+    opacity: 0.85;
+}
+
+.fanclub-creator {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFFFFF;
+    opacity: 0.85;
+}
+
+.fanclub-stats {
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+    text-align: center;
+}
+
+.fanclub-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fanclub-stat .stat-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+}
+
+.fanclub-stat .stat-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+.fanclub-content-panel {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.fanclub-col-left,
+.fanclub-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.fanclub-block {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    min-height: 90px;
+}
+
+.fanclub-col-right .fanclub-block {
+    min-height: 130px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 700px) {
+    .artist-header,
+    .fanclub-header {
+        flex-wrap: wrap;
+    }
+
+    .artist-stats,
+    .fanclub-stats {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 35px;
+    }
+
+    .albums-grid {
+        gap: 18px;
+    }
+
+    .album-card,
+    .album-cover {
+        width: 110px;
+    }
+
+    .album-cover {
+        height: 110px;
+    }
+
+    .fanclub-content-panel {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding-left: 0;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}

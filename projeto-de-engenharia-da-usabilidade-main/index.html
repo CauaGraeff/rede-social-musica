@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notee - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        @font-face {
+    font-family: 'More Sugar';
+    src: url('caminho/para/sua/fonte/MoreSugar-Regular.woff2') format('woff2'),
+         url('caminho/para/sua/fonte/MoreSugar-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('CodecPro-Regular.woff2') format('woff2'),
+       url('CodecPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+        * {
+            margin: 0;
+            overflow: hidden;
+            
+        }
+        body {
+            background: url("imagens/fundoLogin.png");
+            background-size: cover;
+        }
+        .Seção {
+            margin: 60px;
+            height: 81vh; /* ou a altura desejada */
+            display: flex;
+            justify-content: center; /* horizontal */
+            align-items: center;
+        }
+        .Dados {
+            position: relative;
+            width: 100%;
+            padding: 180px;
+            text-align: center;
+            background: url("imagens/note2.png") no-repeat center;
+            background-size: 1250px auto;
+        }
+        .imagem {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 180px;
+            width: auto;
+            height: auto;
+        }
+        .slogan {
+            margin-bottom: 50px;
+            font-family: 'More Sugar', cursive;
+            font-size: 20.3px;
+        }
+        .texto {
+            font-size: 11.1px;
+            font-family: 'Anton', sans-serif;
+            margin-right: 175px;
+        }
+        .entrada {
+            background-color: #00709e;
+            border: none;
+            width: 250px;
+            height: 35px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .continuar {
+            display: block;
+            margin: auto;
+            font-size: 20.6px;
+            font-family: 'Codec Pro', sans-serif;
+            background-color: #7cc623;
+            width: 250px;
+            height: 35px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+
+        }
+        .continuar:hover {
+            opacity: 0.65;
+        }
+        .google {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 20px;
+            font-size: 14.6px;
+            font-family: 'Codec Pro', sans-serif;
+            background-color: #7cc623;
+            width: 250px;
+            height: 35px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            
+
+        }
+        .google img {
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin-top: 6px;
+        }
+        .separacao {
+            margin-top: 7.5px;
+            margin-bottom: 7.5px;
+        }
+        .container-dados {
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .rodape {
+            text-decoration: underline;
+            color: #424242;
+            cursor: pointer;
+        }
+        @media(max-width: 768px) {
+            .Seção {
+                margin: 20px;
+                height: auto;
+            }
+            .Dados {
+                padding: 20px;
+                background-size: 420px auto;
+                margin-top: 100px;
+                background-image: url("imagens/noteecelular.png");
+
+            }
+            .imagem {
+                max-width: 75px;
+                margin-bottom: 10px;
+            }
+            .slogan {
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+            .texto {
+                font-size: 10px;
+                margin-right: 10px;
+            }
+            .entrada, .continuar, .google {
+                width: 60%;
+                max-width: 200px;
+                height: 35px;
+                font-size: 12px;
+                text-align: center;
+            }
+            .rodape {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class = "Seção">
+    <div class = "Dados">
+        <img class = "imagem" src="imagens/note.png">
+        
+        <p class="slogan">Onde a música vira conexão.</p>
+        <div class ="container-dados">
+        <p class="texto">E-mail:</p>
+        <input id="email" class = "entrada" type="email">
+        </div>
+        <div class="container-dados">
+        <p class="texto">Senha:</p>
+        <input id="senha"class = "entrada" type="password">
+        </div>
+        
+        <button class = "continuar" onclick="Logar()">Continuar</button>
+        <p class = "separacao">ou</p>
+        <a class = "google" href="#"><img src="imagens/image.png" alt="Google">Continuar com o Google</a>
+        <footer>
+            <a class="rodape" href="cadastro.html">Criar Conta</a>
+            <a class="rodape">Esqueceu a Senha?</a>
+        </footer>
+    </div>
+    </section>
+</body>
+</html>

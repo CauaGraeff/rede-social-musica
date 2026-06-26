@@ -1,0 +1,124 @@
+/* ======================================================================= ===    Configurações Gerais e Reset (Zera as margens do navegador)    ======================================================================= === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+body {
+  /* Define a imagem de fundo combinada com um degradê escuro para dar leitura ao texto */
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("imagens/Wireframe_Notee_LaSalle_2026 (1).png");
+  background-size: cover; /* Faz a imagem cobrir toda a tela sem distorcer */
+  background-position: center; /* Centraliza a imagem na tela */
+  background-repeat: no-repeat; /* Impede que a imagem fique se repetindo */
+  background-attachment: fixed; /* Deixa o fundo travado enquanto o usuário rola a página */
+  background-color: #0071a0; /* Cor de fundo de segurança caso a imagem falhe */
+  color: #ffffff; /* Cor do texto padrão (Branco) */
+  font-family:
+    "Open Sans", sans-serif; /* Fonte padrão do site */ /* Crucial: Deixa um espaço no topo para o conteúdo não sumir por baixo do menu fixo */
+  padding-top: 110px;
+  min-height: 100vh; /* Garante que o fundo ocupe no mínimo a altura inteira da tela */
+  overflow-x: hidden; /* Evita que apareça uma barra de rolagem horizontal indesejada */
+} /* ======================================================================= ===    Barra Superior / Cabeçalho (Fundo Transparente)    ======================================================================= === */
+.cabecalho-principal {
+  display: flex; /* Alinha os blocos (esquerdo, centro, direito) lado a lado */
+  justify-content: space-between; /* Empurra os blocos para as extremidades (esquerda, centro, direita) */
+  align-items: center; /* Alinha todos os itens verticalmente no centro */
+  width: 100vw; /* Ocupa a largura total da janela do navegador */
+  background-color: transparent; /* Sem cor de fundo para dar o efeito flutuante */
+  padding: 20px 40px; /* Afasta o menu das bordas de cima e dos lados */
+  position: fixed; /* Fixa o menu no topo da tela, ele não sai do lugar ao rolar */
+  top: 0;
+  left: 0;
+  z-index: 100; /* Garante que o menu fique por cima de qualquer outro elemento */
+  height: auto; /* Altura se adapta ao tamanho do logotipo */
+  overflow: hidden;
+} /* Agrupamento Esquerdo (Ícone da Casinha + Logotipo) */
+.cabecalho-esquerdo {
+  display: flex;
+  align-items: center; /* Alinha a casinha e o logo perfeitamente no meio */
+  gap: 12px; /* Espaço entre a casinha e o logo */
+} /* Ícone da Home (Casinha) */
+.icone-home {
+  font-size: 2.2rem; /* Tamanho do ícone */
+  color: #ffffff;
+  cursor: pointer; /* Transforma a seta do mouse na mãozinha de clique */ /* Aplica um efeito de sombra diretamente no desenho do ícone */
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+} /* Configurações da Imagem do Logo */
+.imagem-logo {
+  height: 90px; /* Altura controlada para não quebrar o layout do cabeçalho */
+  width: auto; /* Deixa a largura proporcional automática */
+  object-fit: contain; /* Garante que a imagem não seja cortada nem espremida */
+  flex-shrink: 0; /* Impede o navegador de esmagar o logo se a tela diminuir */
+ /* Garante que o fundo do logo seja transparente */
+} /* ======================================================================= ===    Menu Central em Formato de Pílulas (Efeito de Vidro e Sombra)    ======================================================================= === */
+.navegacao-cabecalho {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25); /* Fundo preto bem transparente */
+  padding: 6px 10px;
+  border-radius: 30px; /* Deixa as pontas arredondadas como uma pílula */
+  gap: 4px; /* Espaço entre os botões do menu */ /* Sombras combinadas (externa e interna) para criar profundidade/relevo */
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1); /* Efeito de desfoque estilo "Glassmorphism" (vidro fosco) */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(
+    8px
+  ); /* Compatibilidade com o navegador Safari */
+} /* Itens individuais do Menu (Links) */
+.item-navegacao {
+  color: #ffffff;
+  text-decoration: none; /* Remove aquele sublinhado padrão de links */
+  font-size: 0.95rem;
+  padding: 8px 16px; /* Espaço interno para criar a área do botão */
+  border-radius: 20px; /* Também arredondado para encaixar no menu */
+  transition: all 0.2s ease; /* Deixa a mudança de cor suave quando passa o mouse */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700; /* Deixa o texto em negrito */
+} /* Efeito ao passar o mouse por cima dos links não ativos */
+.item-navegacao:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Cria um fundo cinza bem clarinho */
+} /* Estilo do botão da página atual (No caso, o botão "Início") */
+.item-navegacao.ativo {
+  background-color: #ffffff; /* Fundo totalmente branco */
+  color: #0286bc; /* Texto azul para dar contraste e destaque */
+} /* ======================================================================= ===    Agrupamento Direito (Acessibilidade, Busca e Perfil)    ======================================================================= === */
+.cabecalho-direito {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaçamento largo entre os ícones da direita */
+} /* Ícones de Acessibilidade e de Busca */
+.icone-acessibilidade,
+.icone-busca {
+  font-size: 1.6rem;
+  color: #ffffff;
+  cursor: pointer;
+  filter: drop-shadow(
+    0px 2px 4px rgba(0, 0, 0, 0.5)
+  ); /* Sombra para destacar do fundo */
+} /* Ícone de Usuário (Perfil) */
+.icone-usuario {
+  font-size: 1.8rem; /* Um pouco maior que os outros para chamar atenção */
+  color: #ffffff;
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+} /* ======================================================================= === Layout de Conteúdo e Seções Base (Corpo do Site) ======================================================================= === */
+.container-conteudo {
+  width: 100%;
+  padding: 15px 40px 30px 40px; /* Espaçamentos internos: cima, direita, baixo, esquerda */
+  display: flex;
+  flex-direction: column; /* Alinha os blocos internos de cima para baixo */
+  gap: 45px; /* Espaço automático entre as seções que vocês criarem aqui dentro */
+  overflow: hidden;
+}

@@ -1,0 +1,932 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.6) 100%), 
+                      url('imagens/Wireframe_Notee_LaSalle_2026 (1).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #0071A0; 
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+/* ==========================================================================
+   2. BARRA SUPERIOR (Ajustada com a casinha removida do topo horizontal)
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;          
+    width: 100vw;                 
+    background-color: transparent; 
+    padding: 15px 40px 10px 20px;  
+    position: fixed;              
+    top: 0;
+    left: 0;
+    z-index: 90;                  
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    /* AJUSTADO: Reduzido de 110px para 55px para o Notee colar harmonicamente perto do menu vertical */
+    margin-left: 55px; 
+}
+
+.logo-img {
+    height: 80px;                  
+    width: auto;                  
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25); 
+    padding: 6px 10px;
+    border-radius: 30px;
+    gap: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-item {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;              
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background-color: #FFFFFF;
+    color: #0286bc;               
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.access-icon, .search-icon, .user-icon {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.active-profile {
+    color: #00b0f0 !important;
+}
+
+/* ==========================================================================
+   3. LAYOUT DE CONTEÚDO E CONTAINERS (Centralizados perfeitos)
+   ========================================================================== */
+.content-container {
+    width: 100%;
+    padding: 120px 40px 40px 85px; /* 85px de padding mantém os cards protegidos longe do menu lateral */
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.music-section {
+    width: 100%;
+    max-width: 85vw;   
+    margin: 0 auto;    /* Mantém centralizado em telas ultra-wide */
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    padding-left: 10px; 
+}
+
+/* ==========================================================================
+   4. SEÇÃO DO PERFIL CENTRALIZADA
+   ========================================================================== */
+.secao-identidade-usuario {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    background-color: rgba(48, 48, 48, 0.35);
+    padding: 30px;
+    border-radius: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    max-width: 85vw;   
+    width: 100%;       
+    margin: 0 auto;    
+}
+
+.avatar-usuario-wrapper {
+    width: 130px;
+    height: 130px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+}
+
+.avatar-usuario-wrapper i {
+    font-size: 4.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.infos-usuario-bloco {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.linha-topo-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.username-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-editar-perfil, .btn-compartilhar-perfil {
+    background-color: #00597A;
+    border: none;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s;
+}
+
+.btn-compartilhar-perfil {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.btn-editar-perfil:hover, .btn-compartilhar-perfil:hover {
+    background-color: #00658B;
+}
+
+.estatisticas-usuario {
+    display: flex;
+    gap: 30px;
+}
+
+.stat-item {
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.stat-item strong {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.stat-item span {
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 2px;
+}
+
+.caixa-bio-usuario {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.caixa-bio-usuario p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   5. CARROSSEL DE ÁLBUNS
+   ========================================================================== */
+.albums-grid {
+    display: flex;
+    flex-wrap: nowrap;            
+    gap: 24px;         
+    overflow-x: auto; 
+    overflow-y: hidden;           
+    background-color: rgba(48, 48, 48, 0.4); 
+    border-radius: 24px;          
+    padding: 30px 30px 20px 30px; 
+    scrollbar-width: none;        
+    width: 100%; 
+}
+
+.albums-grid::-webkit-scrollbar {
+    display: none; 
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 160px;                 
+    flex-shrink: 0;
+    cursor: pointer; 
+}
+
+.album-cover {
+    width: 100%;
+    height: 160px;                
+    object-fit: cover;
+    background-color: rgba(111, 111, 111, 0.6); 
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.placeholder-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.album-card:hover .album-cover {
+    transform: scale(1.06); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.album-info { width: 100%; }
+
+.album-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    text-shadow: none !important; 
+    letter-spacing: 0.5px;
+}
+
+.artist-name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #E0E0E0;
+}
+
+/* ==========================================================================
+   6. SEÇÃO DE RESENHAS
+   ========================================================================== */
+.reviews-container-block {
+    max-width: 85vw; 
+    width: 100%;
+    margin: 0 auto;  
+}
+
+.bloco-resenha-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+    align-items: stretch;
+}
+
+.review-card-fixo {
+    flex-shrink: 0;
+}
+
+.balao-resenha-conteudo {
+    flex: 1;
+    background-color: #00597A; 
+    border-radius: 18px;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.topo-balao-resenha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.usuario-resenha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.estrelas-resenha {
+    color: #FFB800; 
+    display: flex;
+    gap: 3px;
+    font-size: 1rem;
+}
+
+.texto-resenha {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================================================
+   7. MENU LATERAL FIXO REPOSICIONADO (Travado na borda esquerda padrão)
+   ========================================================================== */
+.menu-lateral {
+    width: 60px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 37px 0 40px 0;        
+    position: fixed;               
+    top: 0;
+    left: 15px; /* Mantido fixo coladinho no canto esquerdo da tela */                   
+    height: 100vh; 
+    z-index: 100;                  
+}
+
+.grupo-lateral-topo, .grupo-lateral-rodape {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    align-items: center;
+}
+
+.item-lateral-circular {
+    width: 36px; 
+    height: 36px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #0286bc; 
+    font-size: 1.05rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.item-lateral-circular i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-lateral-circular:hover {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   9. TELA DE DETALHES DO ÁLBUM (NÍTIDO E COM BOTÃO ENVIAR)
+   ========================================================================== */
+.layout-album {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 50px;
+    align-items: start;
+    width: 100%;
+}
+
+.detalhes-album {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.capa-album-grande {
+    width: 240px;
+    height: 240px;
+    background-image: url('imagens/hmhas.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.titulo-album {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    text-shadow: none !important; /* Remove qualquer borrão neon */
+}
+
+.autor-album {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #E0E0E0;
+    margin-bottom: 15px;
+}
+
+.box-avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(30, 30, 30, 0.6);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+
+.estrelas, .estrelas-comentario {
+    display: flex;
+    gap: 4px;
+    color: #707070;
+}
+
+.estrelas .ativa, .estrelas-comentario .ativa {
+    color: #FFB800;
+}
+
+.info-adicional {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.label-ouca {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.icones-streaming {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.stream-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.stream-icon.spotify {
+    background-color: #1DB954 !important;
+    color: #FFFFFF !important;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-circular {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-circular:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.lista-musicas-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.titulo-secao-musicas {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 22px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.titulo-secao-musicas::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.lista-musicas-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.card-musica {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00597A;
+    padding: 16px 28px;
+    border-radius: 14px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), /* Sombra suavizada para nitidez */
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-musica:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #00658B;
+}
+
+.musica-lado-esquerdo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.numero-faixa {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    min-width: 20px;
+}
+
+.capa-miniatura-musica {
+    width: 40px;
+    height: 40px;
+    background-image: url('imagens/hmhas.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+}
+
+.textos-musica {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nome-musica {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.subtitulo-artista {
+    font-size: 0.85rem;
+    color: #E0E0E0;
+    font-weight: 400;
+}
+
+.musica-lado-direito {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.duracao-musica {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.link-play-faixa {
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-play-musica {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icone-play-musica:hover {
+    color: #1DB954;
+    transform: scale(1.15);
+}
+
+.icone-coracao-musica {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icone-coracao-musica:hover {
+    color: #FF4A5A;
+    transform: scale(1.1);
+}
+
+.estrelas-musica {
+    display: flex;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.estrela-interativa, .estrela-comentario-interativa {
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.estrela-interativa:hover, .estrela-comentario-interativa:hover {
+    transform: scale(1.15);
+}
+
+.estrelas-musica .active, .estrelas-musica .ativa {
+    color: #FFB800;
+}
+
+.barra-comentario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(35, 35, 35, 0.9);
+    padding: 10px 20px 10px 25px; 
+    border-radius: 30px;
+    width: 100%;
+    gap: 15px;
+}
+
+.input-opiniao {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.input-opiniao::placeholder {
+    color: #A0A0A0;
+}
+
+.btn-enviar-avaliacao {
+    background-color: #00597A;
+    border: none;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-enviar-avaliacao i {
+    font-size: 1rem;
+    margin-left: -2px; 
+}
+
+.btn-enviar-avaliacao:hover {
+    background-color: #00658B;
+    transform: scale(1.05);
+}
+.music-link {
+    text-decoration: none; 
+    color: inherit; 
+    transition: color 0.2s ease, text-decoration
+}
+
+/* ==========================================================================
+   10. AJUSTES ESPECÍFICOS PARA A TELA DE FAVORITOS (Corações de Destaque)
+   ========================================================================== */
+.album-card-wrapper {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0; 
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.favorite-btn:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.favorite-btn.pinned {
+    color: #ff3366; 
+}
+
+.secao-top-avaliacoes {
+    margin-top: 15px; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.titulo-secao-reviews {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 22px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lista-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.card-review {
+    display: flex;
+    flex-direction: column;
+    background-color: #00597A; 
+    padding: 20px 28px;
+    border-radius: 14px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card-review:hover {
+    transform: translateY(-2px);
+    background-color: #00658B;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-review-icon {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nome-usuario {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.estrelas-review {
+    display: flex;
+    gap: 4px;
+    color: #707070;
+    font-size: 0.9rem;
+}
+
+.estrelas-review .ativa {
+    color: #FFB800; 
+}
+
+.texto-review {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #E0E0E0;
+    margin-bottom: 16px;
+}
+
+.review-acoes {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+}
+
+.btn-acao-review {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-acao-review:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.btn-curtir:hover i {
+    color: #FF4B4B; 
+}
+
+.btn-responder:hover i {
+    color: #00D2FF; 
+}
+
+.contador-likes,
+.contador-respostas {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+}

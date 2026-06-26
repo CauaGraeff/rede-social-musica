@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notee - Configurações</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-principal">
+        <div class="cabecalho-esquerdo">
+            <img src="imagens/Note-Logo.png" alt="Logo Notee" class="imagem-logo">
+        </div>
+
+        <nav class="navegacao-cabecalho">
+            <a href="tela_albuns.html" class="item-navegacao">Início</a> 
+            <a href="albuns.html" class="item-navegacao">Artistas</a>
+            <a href="fanClube.html" class="item-navegacao">Fã Clube</a>
+            <a href="tela_favoritos.html" class="item-navegacao">Favoritos</a>
+            <a href="config.html" class="item-navegacao ativo">Configurações</a>
+        </nav>
+
+        <div class="cabecalho-direito">
+            <i class="bi bi-universal-access icone-acessibilidade"></i>
+            <i class="bi bi-search icone-busca"></i>
+            <a href="perfil.html" style="color: inherit;"><i class="bi bi-person-circle icone-usuario"></i></a>
+        </div>
+        </div>
+    </header>
+
+    <div class="container-geral-com-lateral">
+
+        <aside class="menu-lateral">
+            <div class="grupo-lateral-topo">
+                <a href="tela_albuns.html" class="item-lateral-circular"><i class="bi bi-house-door-fill"></i></a>
+                <a href="tela_albuns.html" class="item-lateral-circular"><i class="bi bi-arrow-left"></i></a>
+                <a href="#" class="item-lateral-circular"><i class="bi bi-gear-fill"></i></a>
+            </div>
+
+            <div class="grupo-lateral-rodape">
+                <a href="perfil.html" class="item-lateral-circular"><i class="bi bi-person-fill"></i></a>
+                <a href="index.html" class="item-lateral-circular"><i class="bi bi-box-arrow-left"></i></a>
+            </div>
+        </aside>
+
+        <main class="content-container">
+            <div class="settings-container">
+                <h1 class="settings-title">Configurações</h1>
+
+                <div class="search-box">
+                    <input type="text" placeholder="O que você procura?" class="search-input">
+                    <i class="bi bi-search search-icon"></i>
+                </div>
+
+                <div class="options-panel">
+
+                    <a href="#" class="option-item">
+                        <span class="option-text">Segurança e privacidade</span>
+                        <i class="bi bi-lock-fill option-icon"></i>
+                    </a>
+
+                    <a href="#" class="option-item">
+                        <span class="option-text">Acessibilidade</span>
+                        <i class="bi bi-universal-access option-icon"></i>
+                    </a>
+
+                    <a href="#" class="option-item">
+                        <span class="option-text">Modo Escuro</span>
+                        <i class="bi bi-moon-fill option-icon"></i>
+                    </a>
+
+                    <a href="#" class="option-item">
+                        <span class="option-text">Perguntas Frequentes</span>
+                        <i class="bi bi-people-fill option-icon"></i>
+                    </a>
+
+                    <a href="#" class="option-item">
+                        <span class="option-text">Ajuda</span>
+                        <i class="bi bi-question-circle-fill option-icon"></i>
+                    </a>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

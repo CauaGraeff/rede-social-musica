@@ -1,0 +1,482 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.6) 100%), 
+                      url('imagens/Wireframe_Notee_LaSalle_2026 (1).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #0071A0; 
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+/* ==========================================================================
+   2. BARRA SUPERIOR / CABEÇALHO
+   ========================================================================== */
+.cabecalho-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    background-color: transparent;
+    padding: 15px 40px 10px 20px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+}
+
+.cabecalho-esquerdo {
+    display: flex;
+    align-items: center;
+    margin-left: 55px; 
+}
+
+.imagem-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.navegacao-cabecalho {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 6px 10px;
+    border-radius: 30px;
+    gap: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.item-navegacao {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.item-navegacao:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.item-navegacao.ativo {
+    background-color: #FFFFFF;
+    color: #0286bc;
+}
+
+.cabecalho-direito {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icone-acessibilidade, .icone-busca, .icone-usuario {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* ==========================================================================
+   3. LAYOUT DE CONTEÚDO ORIGINAL
+   ========================================================================== */
+.container-geral-com-lateral {
+    display: flex;
+    width: 100%;
+}
+
+.content-container {
+    margin-left: 60px;
+    flex: 1;
+    padding: 120px 40px 40px 40px;
+}
+
+.settings-container {
+    max-width: 600px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   4. BARRA DE PESQUISA (Estilo .box-avaliacao em cor, fonte e transparência)
+   ========================================================================== */
+.search-box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    background-color: rgba(30, 30, 30, 0.6); 
+    border: none;
+    border-radius: 30px; 
+    padding: 18px 25px;   
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.search-icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   5. PAINEL DE OPÇÕES (Estilo .card-musica puro aplicado direto nas linhas)
+   ========================================================================== */
+.options-panel {
+    width: 100%;
+    background-color: transparent; /* ZERADO: Remove o bloco azul antigo que cobria o fundo */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 28px; /* Padding original do card-musica */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 14px; /* Arredondamento original do card-musica */
+    width: 100%;
+    
+    /* COPIADO DETALHADAMENTE DO SEU .CARD-MUSICA */
+    background-color: #00597A; 
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+                
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.option-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.option-icon {
+    font-size: 22px;
+}
+
+/* HOVER COPIADO DETALHADAMENTE DO SEU .CARD-MUSICA:HOVER */
+.option-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    background-color: #00658B;
+}
+
+.barra-comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(35, 35, 35, 0.9);
+    padding: 10px 20px 10px 25px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 750px;
+    margin: 25px auto 0;
+    gap: 10px;
+}
+
+.input-opiniao {
+    flex: none;
+    width: 500px;
+    max-width: 500px;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    outline: none;
+    margin-right: 0;
+}
+
+.input-opiniao::placeholder {
+    color: #A0A0A0;
+}
+
+.btn-enviar-avaliacao {
+    background-color: #00597A;
+    border: none;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-enviar-avaliacao i {
+    font-size: 1rem;
+    margin-left: -2px;
+}
+
+.comentarios-lista {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.comentario-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 16px 18px;
+}
+
+.comentario-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.comentario-autor,
+.comentario-data {
+    color: #ffffff;
+    font-size: 0.88rem;
+}
+
+.comentario-autor {
+    font-weight: 700;
+}
+
+.comentario-texto {
+    color: #eaeaea;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.comentario-stars i {
+    color: #ffcc00;
+    margin-left: 3px;
+}
+
+
+.btn-enviar-avaliacao:hover {
+    background-color: #00658B;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   6. MENU LATERAL FIXO 
+   ========================================================================== */
+.menu-lateral {
+    width: 60px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 37px 0 40px 0;        
+    position: fixed;               
+    top: 0;
+    left: 15px;                    
+    height: 100vh; 
+    z-index: 100;                  
+}
+
+.grupo-lateral-topo, .grupo-lateral-rodape {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    align-items: center;
+}
+
+.item-lateral-circular {
+    width: 36px; 
+    height: 36px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #0286bc; 
+    font-size: 1.05rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.item-lateral-circular i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-lateral-circular:hover {
+    transform: scale(1.08);
+}
+
+.layout-album {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 50px;
+    align-items: start;
+    width: 100%;
+}
+
+.detalhes-album {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.capa-album-grande {
+    width: 240px;
+    height: 240px;
+    background-image: url('imagens/hmhas.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.titulo-album {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    text-shadow: none !important;
+}
+
+.autor-album {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #E0E0E0;
+    margin-bottom: 15px;
+}
+
+.box-avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(30, 30, 30, 0.6);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+
+.estrelas, .estrelas-comentario {
+    display: flex;
+    gap: 4px;
+    color: #707070;
+}
+
+.estrelas .ativa, .estrelas-comentario .ativa {
+    color: #FFB800;
+}
+
+.info-adicional {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.label-ouca {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.icones-streaming {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.stream-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.stream-icon.spotify {
+    background-color: #1DB954 !important;
+    color: #FFFFFF !important;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-circular {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-circular:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}

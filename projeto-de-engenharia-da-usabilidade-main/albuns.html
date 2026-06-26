@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notee - Artistas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <img src="imagens/Note-Logo.png" alt="Logo Notee" class="logo-img">
+        </div>
+
+        <nav class="header-nav">
+            <a href="tela_albuns.html" class="nav-item">Início</a>
+            <a href="albuns.html" class="nav-item active">Artistas</a>
+            <a href="fanClube.html" class="nav-item">Fã Clube</a>
+            <a href="tela_favoritos.html" class="nav-item">Favoritos</a>
+            <a href="config.html" class="nav-item">Configurações</a>
+        </nav>
+
+        <div class="header-right">
+            <i class="bi bi-universal-access access-icon"></i>
+            <i class="bi bi-search search-icon"></i>
+            <a href="perfil.html" style="color: inherit;"><i class="bi bi-person-circle user-icon"></i></a>
+        </div>
+    </header>
+
+    <div class="container-geral-com-lateral">
+
+        <aside class="menu-lateral">
+            <div class="grupo-lateral-topo">
+                <a href="tela_albuns.html" class="item-lateral-circular"><i class="bi bi-house-door-fill"></i></a>
+                <a href="javascript:history.back()" class="item-lateral-circular"><i class="bi bi-arrow-left"></i></a>
+                <a href="config.html" class="item-lateral-circular"><i class="bi bi-gear-fill"></i></a>
+            </div>
+
+            <div class="grupo-lateral-rodape">
+                <a href="perfil.html" class="item-lateral-circular"><i class="bi bi-person-fill"></i></a>
+                <a href="index.html" class="item-lateral-circular"><i class="bi bi-box-arrow-left"></i></a>
+            </div>
+        </aside>
+
+        <main class="content-container">
+
+            <section class="secao-identidade-usuario">
+                
+                <div class="avatar-usuario-wrapper">
+                    <img src="imagens/AnaVitoriaPrincipal.png" alt="Foto de Anavitória" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+
+                <div class="infos-usuario-bloco">
+                    <div class="linha-topo-usuario">
+                        <h1 class="username-title">ANAVITÓRIA</h1>
+                        <button class="btn-editar-perfil" style="background-color: #00b0f0;">Seguir</button>
+                    </div>
+                    
+                    <div class="estatisticas-usuario">
+                        <div class="stat-item">
+                            <strong>25.005</strong><span>Seguidores</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>7</strong><span>Álbuns</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>243</strong><span>Músicas</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="music-section">
+                
+                <h2 class="section-title">Álbuns</h2>
+
+                <div class="albums-grid">
+
+                    <a href="tela_avaliacao.html" style="text-decoration: none; color: inherit;">
+                        <div class="album-card">
+                            <img src="imagens/claraboia.jpg" alt="Capa do álbum Claraboia" class="album-cover">
+                            <div class="album-info">
+                                <h3 class="album-name">Claraboia</h3>
+                                <p class="artist-name">Anavitória</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="album-card">
+                        <img src="imagens/esquinas.jpg" alt="Capa do álbum Esquinas" class="album-cover">
+                        <div class="album-info">
+                            <h3 class="album-name">Esquinas</h3>
+                            <p class="artist-name">Anavitória</p>
+                        </div>
+                    </div>
+
+                    <div class="album-card">
+                        <img src="imagens/cor.jpg" alt="Capa do álbum Cor" class="album-cover">
+                        <div class="album-info">
+                            <h3 class="album-name">Cor</h3>
+                            <p class="artist-name">Anavitória</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

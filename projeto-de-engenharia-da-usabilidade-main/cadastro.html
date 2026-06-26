@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notee - Cadastro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        @font-face {
+    font-family: 'More Sugar';
+    src: url('caminho/para/sua/fonte/MoreSugar-Regular.woff2') format('woff2'),
+         url('caminho/para/sua/fonte/MoreSugar-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('CodecPro-Regular.woff2') format('woff2'),
+       url('CodecPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+        * {
+            margin: 0;
+            overflow: hidden;
+            
+        }
+        body {
+            background: url("imagens/fundoLogin.png");
+            background-size: cover;
+        }
+        .Seção {
+            margin: 60px;
+            height: 81vh; /* ou a altura desejada */
+            display: flex;
+            justify-content: center; /* horizontal */
+            align-items: center;
+        }
+        .Dados {
+            position: relative;
+            width: 100%;
+            padding: 180px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url("imagens/note2.png") no-repeat center;
+            background-size: 1150px auto;
+        }
+        .cadastro {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .slogan {
+            
+            font-family: 'More Sugar', cursive;
+            font-size: 20.3px;
+        }
+        .texto {
+            font-size: 11.1px;
+            font-family: 'Anton', sans-serif;
+            display: flex;
+            align-items: left;
+        }
+        .entrada {
+            background-color: #00709e;
+            border: none;
+            width: 250px;
+            height: 25px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .verde {
+            background-color: #4d840a;
+        }
+        .continuar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20.6px;
+            font-family: 'Codec Pro', sans-serif;
+            background-color: #7cc623;
+            width: 250px;
+            height: 35px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin: 20px auto 0;
+            text-decoration: none;
+            
+        }
+        .continuar:hover {
+            opacity: 0.65;
+        }
+        .container-dados {
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+        .topo-cadastro {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-bottom: 35px;
+        }
+        .imagem-cadastro {
+            position: absolute;
+            left: 425px; 
+        }
+        
+        @media(max-width: 768px) {
+            .Seção {
+                margin: 20px;
+                height: auto;
+            }
+            .Dados {
+                padding: 20px;
+                background-size: 325px auto;
+                margin-top: 100px;
+                background-image: url("imagens/noteecelularcadastro.png");
+                gap: 0px;
+            }
+            .slogan {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            
+            .texto {
+                font-size: 5.9px;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .entrada {
+                width: 50%;
+                max-width: 200px;
+                height: 15px;
+                font-size: 12px;
+                text-align: center;
+            }
+            .continuar {
+                width: 50%;
+                max-width: 200px;
+                height: 15px;
+                font-size: 12px;
+                text-align: center;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class = "Seção">
+    
+    <div class = "Dados">
+        <div class = "topo-cadastro">
+        <a href="index.html" class="imagem-cadastro"><img src="imagens/retorno.png"></a>
+        <p class="slogan"> Cadastra - se no NOTEE</p>
+        </div>
+        <section class = "cadastro">
+        <div class="dados">
+        <div class ="container-dados">
+            <p class="texto">Nome Completo:</p>
+            <input id="Nome" class = "entrada" type="text" >
+        </div>
+
+        <div class="container-dados">
+        <p class="texto">Telefone:</p>
+        <input id="telefone"class = "entrada" type="tel">
+        </div>
+
+        <div class ="container-dados">
+        <p class="texto">E-mail:</p>
+        <input id="email" class = "entrada" type="email">
+        </div>
+
+        <div class="container-dados">
+                <p class="texto">Senha:</p>
+                <input id="senha" class = "entrada" type="password">
+            </div>
+        </div>
+        <div>
+        <p class="texto">Escolha seu nome de usuário:</p>
+        <input id="usuario" class = "entrada verde" type="text">
+        </div>
+        </section>
+        <a href = "conhecendo.html" class = "continuar" onclick="">Continuar</a>
+    </div>
+    </section>
+</body>
+</html>
